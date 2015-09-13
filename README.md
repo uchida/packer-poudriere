@@ -1,14 +1,14 @@
-# packer-freebsd
+# packer-poudriere
 
-[![CircleCI](https://img.shields.io/circleci/project/uchida/packer-freebsd.svg)](https://circleci.com/gh/uchida/packer-freebsd)
-[![License](https://img.shields.io/github/license/uchida/packer-freebsd.svg)](http://creativecommons.org/publicdomain/zero/1.0/deed)
+[![CircleCI](https://img.shields.io/circleci/project/uchida/packer-poudriere.svg)](https://circleci.com/gh/uchida/packer-poudriere)
+[![License](https://img.shields.io/github/license/uchida/packer-poudriere.svg)](http://creativecommons.org/publicdomain/zero/1.0/deed)
 
-packer template to build FreeBSD (with zfsroot) images
+packer template to build FreeBSD (zfsroot) with poudriere images
 
-vagrant images are available at [uchida/freebsd](https://atlas.hashicorp.com/uchida/boxes/freebsd).
+vagrant images are available at [uchida/poudriere](https://atlas.hashicorp.com/uchida/boxes/poudriere).
 
 ```console
-vagrant init uchida/freebsd; vagrant up
+vagrant init uchida/poudriere; vagrant up
 ```
 
 ## Building Images
@@ -16,8 +16,8 @@ vagrant init uchida/freebsd; vagrant up
 To build images, simply run:
 
 ```console
-$ git clone https://github.com/uchida/packer-freebsd
-$ cd packer-freebsd
+$ git clone https://github.com/uchida/packer-poudriere
+$ cd packer-poudriere
 $ packer build template.json
 ```
 
@@ -63,5 +63,5 @@ $ for name in ATLAS_USERNAME ATLAS_NAME ATLAS_TOKEN; do
 [![CC0](http://i.creativecommons.org/p/zero/1.0/88x31.png "CC0")]
 (http://creativecommons.org/publicdomain/zero/1.0/deed)
 
-dedicated to public domain by [contributors](https://github.com/uchida/packer-freebsd/graphs/contributors).
+dedicated to public domain by [contributors](https://github.com/uchida/packer-poudriere/graphs/contributors).
 

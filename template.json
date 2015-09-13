@@ -1,6 +1,6 @@
 {
   "variables": {
-      "vm_name": "freebsd",
+      "vm_name": "poudriere",
 
       "atlas_username": "{{env `ATLAS_USERNAME`}}",
       "atlas_name": "{{env `ATLAS_NAME`}}",
@@ -101,6 +101,21 @@
       "script": "scripts/vmguest.sh",
       "execute_command": "chmod +x {{ .Path }}; /bin/sh -c '{{ .Vars }} {{ .Path }}'",
       "only": ["virtualbox-iso", "vmware-iso"]
+    },
+    {
+      "type": "shell",
+      "inline": [
+          "pkg install -y python py27-pip",
+          "pip install ansible",
+          "ansible-galaxy install uchida.poudriere"
+      ],
+      "execute_command": "chmod +x {{ .Path }}; env {{ .Vars }} {{ .Path }}"
+    },
+    {
+      "type": "ansible-local",
+      "playbook_file": "provision.yml",
+      "command": "env ANSIBLE_FORCE_COLOR=1 PYTHONUNBUFFERED=1 ansible-playbook",
+      "extra_arguments": "-e 'ansible_python_interpreter=/usr/local/bin/python2'"
     },
     {
       "type": "shell",

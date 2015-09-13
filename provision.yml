@@ -1,0 +1,6 @@
+---
+- hosts: all
+  sudo: yes
+  roles:
+      - { role: uchida.poudriere, jail_name: "freebsd:9:x86:64", base_version: "10.2-RELEASE" }
+    
