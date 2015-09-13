@@ -1,4 +1,6 @@
 machine:
+  python:
+    version: 2.7.10
   environment:
     PATH: "${HOME}/bin:${PATH}"
     PACKER_URL: "https://dl.bintray.com/mitchellh/packer/packer_0.8.6_linux_amd64.zip"
@@ -6,7 +8,7 @@ machine:
 
 dependencies:
   cache_directories:
-    - "~/bin"
+    - ~/bin
   pre:
     - |
       if [ ! -e "${HOME}/bin/packer" ]; then
@@ -14,10 +16,13 @@ dependencies:
         unzip -d ~/bin packer.zip
       fi
     - packer version
+    - pip install ansible
+    - ansible-galaxy install -p roles uchida.poudriere
 
 test:
   override:
     - packer validate template.json
+    - ansible-playbook -i localhost, --syntax-check provision.yml
 
 deployment:
   release:
