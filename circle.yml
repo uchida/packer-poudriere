@@ -17,7 +17,7 @@ dependencies:
       fi
     - packer version
     - pip install ansible
-    - ansible-galaxy install -p roles uchida.poudriere
+    - ansible-galaxy install -p roles uchida.poudriere,0.1.0
 
 test:
   override:
