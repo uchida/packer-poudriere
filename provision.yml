@@ -2,6 +2,6 @@
 - hosts: all
   roles:
     - role: uchida.poudriere
-      poudriere_jail: "freebsd:10:amd64"
+      poudriere_jail: "FreeBSD:10:amd64"
       poudriere_jailversion: "10.2-RELEASE"
       poudriere_portsmethod: git
