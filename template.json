@@ -107,7 +107,7 @@
       "inline": [
           "pkg install -y python py27-pip",
           "pip install ansible",
-          "ansible-galaxy install uchida.poudriere,0.2.1"
+          "ansible-galaxy install uchida.poudriere,0.2.2"
       ],
       "execute_command": "chmod +x {{ .Path }}; env {{ .Vars }} {{ .Path }}"
     },
