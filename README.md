@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/github/license/uchida/packer-poudriere.svg)](http://creativecommons.org/publicdomain/zero/1.0/deed)
 
 packer template for building poudriere, clean room package builder for FreeBSD,
-including jail to build FreeBSD 10 packages and default ports tree.
+including jail to build FreeBSD 9 and 10 packages and default ports tree.
 
 The Vagrant image is available at [uchida/poudriere](https://atlas.hashicorp.com/uchida/boxes/poudriere).
 

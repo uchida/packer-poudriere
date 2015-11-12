@@ -5,3 +5,7 @@
       poudriere_jail: "FreeBSD:10:amd64"
       poudriere_jailversion: "10.2-RELEASE"
       poudriere_portsmethod: git
+    - role: uchida.poudriere
+      poudriere_jail: "FreeBSD:9:amd64"
+      poudriere_jailversion: "9.3-RELEASE"
+      poudriere_portsmethod: git
