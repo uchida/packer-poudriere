@@ -1,7 +1,8 @@
 # packer-poudriere
 
-[![CircleCI](https://img.shields.io/circleci/project/uchida/packer-poudriere.svg)](https://circleci.com/gh/uchida/packer-poudriere)
+![Version](https://img.shields.io/github/tag/uchida/packer-poudrierer.svg)
 [![License](https://img.shields.io/github/license/uchida/packer-poudriere.svg)](https://tldrlegal.com/license/creative-commons-cc0-1.0-universal)
+[![CircleCI](https://img.shields.io/circleci/project/uchida/packer-poudriere.svg)](https://circleci.com/gh/uchida/packer-poudriere)
 
 packer template for building poudriere, clean room package builder for FreeBSD,
 including jail to build FreeBSD 9 and 10 packages and default ports tree.
