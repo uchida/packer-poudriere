@@ -1,6 +1,6 @@
 # packer-poudriere
 
-![Version](https://img.shields.io/github/tag/uchida/packer-poudrierer.svg?maxAge=2592000)
+![Version](https://img.shields.io/github/tag/uchida/packer-poudriere.svg?maxAge=2592000)
 [![License](https://img.shields.io/github/license/uchida/packer-poudriere.svg?maxAge=2592000)](https://tldrlegal.com/license/creative-commons-cc0-1.0-universal)
 [![CircleCI](https://img.shields.io/circleci/project/uchida/packer-poudriere.svg?maxAge=2592000)](https://circleci.com/gh/uchida/packer-poudriere)
 
