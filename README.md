@@ -64,4 +64,4 @@ setup instructions are the following:
 [![CC0](http://i.creativecommons.org/p/zero/1.0/88x31.png "CC0")]
 (http://creativecommons.org/publicdomain/zero/1.0/deed)
 
-dedicated to public domain by [contributors](https://github.com/uchida/packer-poudriere/graphs/contributors).
+dedicated to public domain, no rights reserved.
