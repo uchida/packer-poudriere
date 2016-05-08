@@ -89,10 +89,30 @@
   "provisioners": [
     {
       "type": "shell",
-      "scripts": [
-        "scripts/base.sh",
-        "scripts/vagrant.sh"
+      "script": "scripts/base.sh",
+      "execute_command": "chmod +x {{ .Path }}; /bin/sh -c '{{ .Vars }} {{ .Path }}'"
+    },
+    {
+      "type": "shell-local",
+      "command": "ansible-galaxy install -v uchida.poudriere -p roles/"
+    },
+    {
+      "type": "shell",
+      "inline": [
+        "pkg install -y python"
       ],
+      "execute_command": "chmod +x {{ .Path }}; /bin/sh -c '{{ .Vars }} {{ .Path }}'"
+    },
+    {
+      "type": "ansible",
+      "playbook_file": "provision.yml",
+      "extra_arguments": "--extra-vars=ansible_python_interpreter=/usr/local/bin/python2.7",
+      "sftp_command": "/usr/libexec/sftp-server -e",
+      "user": "root"
+    },
+    {
+      "type": "shell",
+      "script": "scripts/vagrant.sh",
       "execute_command": "chmod +x {{ .Path }}; /bin/sh -c '{{ .Vars }} {{ .Path }}'"
     },
     {
@@ -100,21 +120,6 @@
       "script": "scripts/vmguest.sh",
       "execute_command": "chmod +x {{ .Path }}; /bin/sh -c '{{ .Vars }} {{ .Path }}'",
       "only": ["virtualbox-iso", "vmware-iso"]
-    },
-    {
-      "type": "shell",
-      "inline": [
-        "pkg install -y python py27-pip",
-        "pip install ansible",
-        "ansible-galaxy install uchida.poudriere,0.3.0"
-      ],
-      "execute_command": "chmod +x {{ .Path }}; env {{ .Vars }} {{ .Path }}"
-    },
-    {
-      "type": "ansible-local",
-      "playbook_file": "provision.yml",
-      "command": "env ANSIBLE_FORCE_COLOR=1 PYTHONUNBUFFERED=1 ansible-playbook",
-      "extra_arguments": "-e 'ansible_python_interpreter=/usr/local/bin/python2'"
     },
     {
       "type": "shell",
