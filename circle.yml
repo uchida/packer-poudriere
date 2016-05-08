@@ -23,6 +23,8 @@ dependencies:
       fi
     - vagrant version
     - cp vagrantfile.template Vagrantfile
+    - pip install ansible
+    - ansible-playbook --version
     - |
       if [ ! -e "${HOME}/bin/packer" ]; then
         curl -Lo packer.zip "${PACKER_URL}"
@@ -30,8 +32,6 @@ dependencies:
         unzip -d ~/bin packer.zip
       fi
     - packer version
-    - pip install ansible
-    - ansible-galaxy install -p roles uchida.poudriere,0.3.0
 
 test:
   override:
