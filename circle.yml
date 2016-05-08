@@ -13,6 +13,7 @@ dependencies:
     - "~/vagrant"
     - "~/bin"
   override:
+    - sudo apt-get install -y jq
     - |
       if [ ! -d "${HOME}/vagrant" ]; then
         curl -Lo vagrant.deb "${VAGRANT_URL}"
